@@ -1,0 +1,36 @@
+#header
+{
+    background-color: darkgreen;
+    color: azure;
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 15px;
+}
+#navigation
+{
+    Display: inline;
+}
+#menu
+{
+    padding:0 ;
+}
+#menu li
+{
+    display:inline;
+}
+#menu li a{
+    background-color: greenyellow;
+    color: black;
+    padding: 15px 34px;
+    margin-right: 30px;
+    text-decoration: none;
+    border-radius: 5px 5px 0 0;
+}
+#menu
+li a:hover{
+   background-color: palegreen;
+}
+#section { margin: 15px 5px 5px 0px;
+float: left;
+    font-size: 14px;
+}
