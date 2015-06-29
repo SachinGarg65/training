@@ -15,6 +15,7 @@ body {
     margin-left: 1px;
     margin-bottom: -40px;
     margin-top: 50px;
+
 }
 #logo {
     margin-left: 120px;
@@ -32,25 +33,28 @@ h2 {
 }
 #register{
     float: right;
-    background-color: khaki;
-    padding-left: 3px;
-    padding-right: 3px;
     border-style: none;
     margin-top: -18px;
     margin-right: 10px;
-    color: floralwhite;
+    color: white;
     font-weight: bold;
+    font-family: 'playball' , cursive;
+    letter-spacing: 2px;
+    position: relative;
+    bottom: 20px;
+    right: 15px;
 }
 #sell{
-    margin-left: 950px;
+    margin-left: 380px;
+    margin-right: 70px;
+    float: left;
     margin-top: -45px;
-    border-style: none;
-    margin-right: 160px;
-    padding-left: 4px;
-    background-color: khaki;
-    color: floralwhite;
+    color: white;
     font-weight: bold;
-    min-width: 119px;
+    font-family: 'playball' , cursive;
+    letter-spacing: 2px;
+    position: relative;
+    right: 500px;
 }
 #menu
 {
@@ -221,8 +225,8 @@ h4{
     margin-left: 551px;
 }
 #tt{
-    margin-top: 10px;
-}
+    margin-top: 0px;
+   }
 #cc{
     font-weight: bolder;
     font-family: 'playball' , cursive;
