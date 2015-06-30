@@ -205,11 +205,31 @@ h4{
     font-size: 20px;
     line-height: 40px;
     font-family: cursive;
+    margin-top: -60px;
+}
+#cc{
+    font-weight: bolder;
+    font-family: 'playball' , cursive;
+    font-size: 50px;
+}
+#set{
+    margin-left: 600px;
+    margin-top: -460px;
 }
 #vr {
     font-size: 30px;
     font-weight: bold;
     text-align: center;
+}
+#employee{
+    border: solid;
+    margin-right: 800px;
+    padding-top: 10px;
+    margin-top: -20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    background-color: palegoldenrod;
+    margin-left: 40px;
 }
 #ram{
     border: none;
@@ -227,11 +247,7 @@ h4{
 #tt{
     margin-top: 0px;
    }
-#cc{
-    font-weight: bolder;
-    font-family: 'playball' , cursive;
-    font-size: 50px;
-}
+
 #j{
      float: left;
      margin-top: -70px;
@@ -275,4 +291,8 @@ h4{
 {
     margin-top: 50px;
     margin-left: 30px;
+}
+#bae
+{
+    text-decoration: bold;
 }
