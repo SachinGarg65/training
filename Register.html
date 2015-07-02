@@ -1,23 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="abc.css">
+    <script src="a.js"></script>
     <meta charset="UTF-8">
-    <title></title>
+    <script>
+        var reg=function()
+        {
+            var student = {
+                'fname':document.getElementById('fname').value,
+                'lname':document.getElementById('lname').value,
+                'male':document.getElementById('msex').value,
+                'female':document.getElementById('fsex').value,
+                'date':document.getElementById('bday').value,
+                'Qualification':document.getElementById('Qualification').value,
+                'file':document.getElementById('file').value
+            };
+            var student1=JSON.stringify(student);
+            localStorage.setItem('student',student1);
+        }
+
+    </script>
 </head>
 <body>
 <div id="header">
     <img id=logo src="c%20logo.jpg" width="80px" height="80px">
     <div id="sell">
-        <form>
             <a href="sell.html">Click here to sell</a>
-        </form>
     </div>
     <div id="register">
-        <form>
             <a href="Login.html">Login</a> | <a href="Register.html">Register</a>
-        </form>
     </div>
     <h1>Creative Collection</h1>
     <h2>Culture grow on the vine of Tradition</h2>
@@ -32,30 +46,70 @@
             <li><a href="Contact.html">Contact Us</a></li>
         </u1></div>
 </div>
-<form>
-    <div id="r">
-        First Name*<br>
-        <input type="text" name="Email ID" value=""></br>
-        </br>
-        Last Name*<br>
-        <input type="text" name="Email ID" value=""></br>
-        </br>
-        Mobile No.*<br>
-        <input type="text" name="Email ID" value=""></br>
-        </br>
-        Email Address*<br>
-        <input type="text" name="Email ID" value=""></br>
-        </br>
-        Password*<br>
-        <input type="text" name="Email ID" value=""></br>
-        </br>
-        Re-enter Password*<br>
-        <input type="text" name="Email ID" value=""></br>
-        </br>
+<div id="employee">
+<form name='registration' onSubmit="return formValidation();">
+    <br>
+    <div id="bae">Become a Employee</div><br>
+    <div id="bae1">
+
+       <label> First Name* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="FName" id="fname"></br>
+        </br></label>
+     <label>   Last Name*   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="LName" id="lname"></br>
+        </br></label>
     </div>
-
-
-    <div id="af"> </br><input style="text-align: right" type="submit" value="Submit">
-        <input style="text-align:right" type="submit" value="Cancel">
+        <label>Select Gender*   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="msex" value="male" id="msex">Male
+        <input type="radio" name="fsex" value="female" id="fsex">Female</label> <br>
+        <br>
+     <label>   Date of Birth   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="date" name="bday" id="bday"></label><br>
+        <br>
+    <label>   Address*  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="LName" id="lname"></label><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="LName" id="lname"><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="LName" id="lname"></br>
+        </br></label>
+    <label>   Zip Code*  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="LName" id="lname"></br>
+        </br></label>
+    <label>   Mobile No.*  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="LName" id="lname"></br>
+        </br></label>
+    <label>   Email ID*  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="LName" id="lname"></br>
+        </br></label>
+        <label>Edu. Qualification &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <select name="Qualification" id="Qualification" >
+            <option value="Select">Select Qualification</option>
+            <option value="Below 10th">Below 10th </option>
+            <option value="10th passed & above">10th passed & above</option>
+            <option value="graduation & above">graduation & above</option>
+            <option value="post graduation & above">post graduation & above</option>
+        </select></label><br>
+        <br>
+       <label> <b>Select Skills you have</b> <br><br>
+        <INPUT TYPE="Checkbox" Name="1" Value ="Commercial Awareness" id="1">Commercial Awareness <br>
+        <INPUT TYPE="Checkbox" Name= "2" Value ="Communication" id="2">Communication<br>
+        <INPUT TYPE="Checkbox" Name="3" Value ="Leadership" id="3">Leadership<br>
+        <INPUT TYPE="Checkbox" Name="4" Value ="Motivation" id="4">Motivation<br>
+        <INPUT TYPE="Checkbox" Name= "5" Value ="Confidence" id="5">Confidence<br>
+        <br><b>Upload Resume</b><br>
+           <br>
+        <input type="file" name="File" accept=".application/pdf/*" id="file"></label>
+        <br>
+        <br>
+        (*)&nbsp; Indicates Mandatory Field
+    <br>
+    <br>
+        <div id="submit">
+           <label> <input type="submit" onclick="reg()"></label>
+           <label> <input type="reset"></label>
+                   </div>
+    </form>
+</div>
 </body>
 </html>

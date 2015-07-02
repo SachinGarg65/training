@@ -15,7 +15,6 @@ body {
     margin-left: 1px;
     margin-bottom: -40px;
     margin-top: 50px;
-
 }
 #logo {
     margin-left: 120px;
@@ -125,7 +124,7 @@ table, th, td {
 }
 #sell{
     margin-left: 980px;
-    margin-top: -40px;re
+    margin-top: -40px;
 }
 #login {
     margin-top: -10px;
@@ -145,11 +144,17 @@ h3 {
 #log1{
     border-style: solid;
     border-color: black;
-    margin-top: 100px;
+    margin-top: -400px;
     margin-right: 495px;
-    margin-left: 500px;
+    margin-left: 300px;
     padding-bottom: 10px;
-    padding-left: 10px}
+    padding-left: 10px;
+    text-align: center;
+}
+
+#loginb{
+margin-top: -20px
+}
 
 #Member
 {
@@ -212,10 +217,7 @@ h4{
     font-family: 'playball' , cursive;
     font-size: 50px;
 }
-#set{
-    margin-left: 600px;
-    margin-top: -460px;
-}
+
 #vr {
     font-size: 30px;
     font-weight: bold;
@@ -223,13 +225,16 @@ h4{
 }
 #employee{
     border: solid;
-    margin-right: 800px;
+    margin-right: 420px;
     padding-top: 10px;
     margin-top: -20px;
     padding-bottom: 10px;
     padding-left: 20px;
     background-color: palegoldenrod;
-    margin-left: 40px;
+    margin-left: 430px;
+}
+#submit{
+    margin-left: 130px;
 }
 #ram{
     border: none;
@@ -246,6 +251,8 @@ h4{
 }
 #tt{
     margin-top: 0px;
+    -webkit-animation-name: magic;
+    animation-name: magic;
    }
 
 #j{
@@ -259,7 +266,7 @@ h4{
     margin-top: 70px;
     margin-left: 100px;
 }
-#h{
+#lh{
     float: left;
     margin-top: -70px;
     margin-left: -50px;
@@ -294,5 +301,28 @@ h4{
 }
 #bae
 {
-    text-decoration: bold;
+    font-family: 'playball' , cursive;
+    margin-top: -10px;
+    text-align: center;
+    text-decoration: solid;
+    text-space: 3px;
+    font-size: 26px;
+
 }
+.btn1
+{
+    background-color: #eaeaea;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    border: none;
+}
+.btn1:hover
+{
+    background-color: rgba(1, 158, 205, 0.48);
+}
+#h{
+  margin-top: 30px;
+    margin-left: 150px;
+}
+
