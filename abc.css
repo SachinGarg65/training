@@ -2,6 +2,9 @@ a{
     text-decoration: none;
 }
 body {
+    background-image: url("soft-yellow-wave-background.jpg");
+    background-size: 1280px 967px;
+    background-repeat: no-repeat;
     background-color: white;
 }
 #header h1{
@@ -142,13 +145,13 @@ h3 {
     text-align: center;
 }
 #log1{
-    border-style: solid;
-    border-color: black;
-    margin-top: -400px;
-    margin-right: 495px;
-    margin-left: 300px;
-    padding-bottom: 10px;
-    padding-left: 10px;
+    border: double;
+    border-color: darkgray ;
+    margin-top: 100px;
+    margin-right: 470px;
+    margin-left: 470px;
+    padding-bottom: 20px;
+    padding-left: 0px;
     text-align: center;
 }
 
@@ -224,13 +227,13 @@ h4{
     text-align: center;
 }
 #employee{
-    border: solid;
+    border: double;
+    border-color: darkgray;
     margin-right: 420px;
     padding-top: 10px;
     margin-top: -20px;
     padding-bottom: 10px;
     padding-left: 20px;
-    background-color: palegoldenrod;
     margin-left: 430px;
 }
 #submit{
@@ -321,8 +324,9 @@ h4{
 {
     background-color: rgba(1, 158, 205, 0.48);
 }
-#h{
-  margin-top: 30px;
-    margin-left: 150px;
+.sc:hover
+{
+    transform:scale(1.4);
 }
+
 

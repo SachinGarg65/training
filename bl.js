@@ -1,13 +1,10 @@
 
-function formValidation()
-{
+function formValidation() {
     var email = document.registration.Email;
     var psw = document.registration.Psw;
     {
-        if(validateEmail(email))
-        {
-            if(passid_validation(psw,7,12))
-            {
+        if (validateEmail(email)) {
+            if (passid_validation(psw, 7, 12)) {
                 return false;
             }
         }
@@ -22,19 +19,18 @@ function formValidation()
             email.focus();
             return false;
         }
-function passid_validation(passid,mx,my)
-{
-    var passid_len = passid.value.length;
-    if (passid_len == 0 ||passid_len >= my || passid_len < mx)
-    {
-        alert("Password should not be empty / length be between "+mx+" to "+my);
-        passid.focus();
-        return false;
+        function passid_validation(passid, mx, my) {
+            var passid_len = passid.value.length;
+            if (passid_len == 0 || passid_len >= my || passid_len < mx) {
+                alert("Password should not be empty / length be between " + mx + " to " + my);
+                passid.focus();
+                return false;
+            }
+            else {
+                alert('Form Successfully Submitted');
+                window.location.reload()
+                return true;
+            }
+        }
     }
-    else
-    {
-        alert('Form Successfully Submitted');
-        window.location.reload()
-        return true;}
-}
 }
