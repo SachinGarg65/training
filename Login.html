@@ -34,17 +34,17 @@
 </div>
 
 <div id="log1">
-    <form name='registration' onSubmit="return formValidation();">
+    <form name='registration'>
         <div id="h4">
             <h4>Login</h4>
         </div>
 
         Email ID:
-        <input type="text" name="Email" value="" required></br>
+        <input type="text" name="Email" value="" id="em" required></br>
         </br>
         Password:
-        <input type="password" name="Psw" value="" required></br>
-        <div id="af"> </br><input style="text-align: right" type="submit" value="Submit">
+        <input type="password" name="Psw" value="" required id="ps"></br>
+        <div id="af"> </br><input type="button" style="text-align: right" value="Submit" onclick="log()">
             <input style="text-align:right" type="reset" value="Cancel"></div>
 
     </form>
@@ -52,3 +52,30 @@
 
 </body>
 </html>
+
+<script>
+
+    var log=function()
+    {
+        creative1 = localStorage.getItem('creative');
+        creative1 = JSON.parse(creative1);
+
+        var e1 = document.getElementById("em").value;
+        var p1=document.getElementById("ps").value;
+
+        var e2=creative1.email;
+        var p2=creative1.pass;
+
+        if(e1 != e2 || p1 != p2)
+        {
+            alert("invalid user id or password");
+        }
+        else
+        {
+            alert("succefully login");
+            window.location.assign("Display.html");
+        }
+
+    }
+
+</script>

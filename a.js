@@ -8,6 +8,7 @@ function formValidation()
     var zip = document.registration.Zip;
     var mobile = document.registration.Mobile;
     var email = document.registration.Email;
+    var Msg ='<%=session.getAttribute("getAlert")%>';
             if (allLetter(fname)) {
                 if (lname_validation(lname)) {
                     if (validsex(mgender, fgender)) {
@@ -15,6 +16,7 @@ function formValidation()
                             if (allnumeric(zip)) {
                                 if (mobile_validation(mobile))
                                     if (ValidateEmail(email)) {
+                                        if (Msg != "null") {
                                     }
                                 }
                             }
@@ -120,5 +122,12 @@ function lname_validation(lname) {
 function validateEmail(email) {
     var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
     return re.test(email);
+
+
+        function alertName(){
+            alert("Form has been submitted");
+        }
+    }
 }
+
 
