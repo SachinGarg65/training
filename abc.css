@@ -319,7 +319,7 @@ h4{
 }
 .btn1
 {
-    background-color: #eaeaea;
+    background-color: antiquewhite;
     border-radius: 50%;
     height: 40px;
     width: 40px;
@@ -329,9 +329,6 @@ h4{
 {
     background-color: rgba(1, 158, 205, 0.48);
 }
-.sc:hover
-{
-    transform:scale(1.4);
-}
+
 
 

@@ -37,50 +37,80 @@
 <table class="align" id="tbl">
     <tr>
         <p>
-        <td colspan="5" style="text-align: center";>
-            <b><i> <h3>Employee Details</h3></i></b>
-        </td>
+        <td colspan="11" style="text-align: center";>
+        <font size="6"<b><i>  Employee Details </i></b> </font>
+    </td>
         </p>
     </tr>
     <tr>
         <p>
         <td>
-            <font size="5" color="#a29d9b"> <B>First Name</B></font>
+            <font size="5" color="black"> <B>F_Name</B></font>
         </td>
         <td>
-            <font size="5" color="#a29d9b"> <B>Last Name</B></font>
+            <font size="5" color="black"> <B>L_Name</B></font>
         </td>
         <td>
-            <font size="5" color="#a29d9b"> <B> Email Id</B></font>
+            <font size="5" color="black"> <B>D.O.B.</B></font>
         </td>
         <td>
-            <font size="5" color="#a29d9b"><b>Joining Date</b></font>
+            <font size="5" color="black"><b>Address</b></font>
         </td>
         <td>
-            <font size="5" color="#a29d9b"> <B>Address</B></font>
+            <font size="5" color="black"> <B>Zip Code</B></font>
         </td>
-
+        <td>
+        <font size="5" color="black"><b>Mobile No</b></font>
+        </td>
+        <td>
+            <font size="5" color="black"> <B>Email</B></font>
+        </td>
+        <td>
+        <font size="5" color="black"><b>Qualification</b></font>
+        </td>
+        <td>
+            <font size="5" color="black"> <B>Image</B></font>
+        </td>
+        <td>
+            <font size="5" color="black"> <B>Delete</B></font>
+        </td>
+        <td>
+            <font size="5" color="black"> <B>Edit</B></font>
+        </td>
         </p>
     </tr>
 
+
+
     <tr>
-        <td class="sc" id="firstname">
-            <font size="4" color="#a29d9b">Sachin </font>
+        <td class="sc" id="fname">
+
         </td>
-        <td class="sc" id="lastname">
-            <font size="4" color="#a29d9b"> Garg </font>
+        <td class="sc" id="lname">
+            <font size="3" color="white"><i></i> </font>
         </td>
-        <td class="sc" id="email1">
-            <font size="4" color="#a29d9b"> s.sachin@gmail.com</font>
+        <td class="sc" id="bday">
+            <font size="3" color="white"> <i></i> </font>
         </td>
-        <td class="sc" id="join">
-            <font size="4" color="#a29d9b">2-12-15 </font>
+        <td class="sc" id="Address">
+            <font size="3" color="white"><i></i> </font>
         </td>
-        <td class="sc" id="adr">
-            <font size="4" color="#a29d9b"> gurgaon</font>
+        <td class="sc" id="Zip">
+            <font size="3" color="white"> <i></i> </font>
+        </td>
+        <td class="sc" id="Mobile">
+            <font size="3" color="white"> <i></i> </font>
+        </td>
+        <td class="sc" id="Email">
+        </td>
+        <td class="sc" id="Qualification">
+            <font size="3" color="white"><i></i></font>
+        </td>
+        <td class="sc" id="files">
+            <font size="3" color="white"> <i></i><img src="" width="40px" height="40px"> </font>
         </td>
         <td>
-            <button class="btn1" onclick="del()"><i class="fa fa-trash-o"></i></button>
+            <button><input class="btn1" onclick="del()"><i class="fa fa-trash-o"></i></input></button>
         </td>
         <td>
             <button class="btn1"><i class="fa fa-pencil-square-o"></i></button>
@@ -89,3 +119,25 @@
 </table>
 </body>
 </html>
+<script>
+
+    creative1 = localStorage.getItem('creative');
+    creative1 = JSON.parse(creative1);
+
+    document.getElementById("fname").innerHTML = creative1.fname;  //fname==obj fields, firstname=id of display
+    document.getElementById("lname").innerHTML = creative1.lname;
+    document.getElementById("bday").innerHTML = creative1.date;
+    document.getElementById("Address").innerHTML = creative1.address;
+    document.getElementById("Zip").innerHTML = creative1.zip;
+    document.getElementById("Mobile").innerHTML = creative1.mobile;
+    document.getElementById("Email").innerHTML = creative1.email;
+    document.getElementById("Qualification").innerHTML = creative1.Qualification;
+    document.getElementById("files").innerHTML = creative1.files;
+
+    var del=function()
+    {
+        localStorage.removeItem("creative");
+
+    }
+
+</script>
