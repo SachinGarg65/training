@@ -126,7 +126,10 @@ function validateEmail(email) {
 
         function alertName(){
             alert("Form has been submitted");
+            window.location.reload();
+            return true;
         }
+
     }
 }
 

@@ -13,20 +13,57 @@
                 'fname':document.getElementById('fname').value,
                 'lname':document.getElementById('lname').value,
                 'pass':document.getElementById('pass').value,
-                'male':document.getElementById('msex').value,
-                'female':document.getElementById('fsex').value,
+                'show':document.getElementById('show').value,
+
                 'date':document.getElementById('bday').value,
                 'address':document.getElementById('Address').value,
                 'zip':document.getElementById('Zip').value,
                 'mobile':document.getElementById('Mobile').value,
                 'email':document.getElementById('Email').value,
                 'Qualification':document.getElementById('Qualification').value,
-                'file':document.getElementById('file').value
+                'file':document.getElementById('file').value,
+                'files':document.getElementById('files').value
             };
             var creative1=JSON.stringify(creative);
             localStorage.setItem('creative',creative1);
-        }
 
+            function handleFileSelect(reg) {
+                var files = reg.target.files; // FileList object
+
+                         for (var i = 0, f; f = files[i]; i++) {
+
+                    if (!f.type.match('image.*')) {
+                        continue;
+                    }
+
+                    var reader = new FileReader();
+
+                    reader.onload = (function(theFile) {
+                        return function(e) {
+                           // Render thumbnail.
+                            var span = document.createElement('span');
+                            span.innerHTML = ['<img class="thumb" src="', e.target.result,
+                                '" title="', escape(theFile.name), '"/>'].join('');
+
+                            document.getElementById('list').insertBefore(span, null);
+                            localStorage.setItem('img', e.target.result);
+                        };
+                    })(f);
+                }
+            }
+
+            document.getElementById('files').addEventListener('change', handleFileSelect, false);
+
+
+            if(localStorage.img) {
+
+                var span = document.createElement('span');
+                span.innerHTML += ['<img class="thumb" src="', localStorage.img,
+                    '" title="test"/>'].join('');
+
+                document.getElementById('list').insertBefore(span, null);
+            }
+        }
     </script>
 </head>
 <body>
@@ -51,6 +88,7 @@
             <li><a href="Contact.html">Contact Us</a></li>
         </u1></div>
 </div>
+
 <div id="employee">
 <form name='registration' onSubmit="return formValidation();">
     <br>
@@ -58,8 +96,8 @@
     <div id="bae1">
 
        <label> First Name*                                                                                                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="text" name="FName" id="fname"></br>
-        </br></label>
+       <input type="text" name="FName" id="fname"> <br>
+        <br></label>
      <label>   Last Name*                                                                                                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="text" name="LName" id="lname"></br>
         </br></label>
@@ -68,8 +106,8 @@
             </br></label>
     </div>
         <label>Select Gender*                                                                                                                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="radio" name="msex" value="male" id="msex">Male
-        <input type="radio" name="fsex" value="female" id="fsex">Female</label> <br>
+            <input type="radio" name="seconds" id="show" value="show">Show&nbsp&nbsp
+            <input type="radio" name="seconds" id="hide" value="hide">Hide
         <br>
      <label>   Date of Birth                                                                                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="date" name="bday" id="bday"></label><br>
@@ -110,14 +148,19 @@
         <input type="file" name="File" accept=".application/pdf/*" id="file"></label>
         <br>
         <br>
-        (*)&nbsp; Indicates Mandatory Field
+        <b>Upload Passport Size Photograph</b><br>
     <br>
+         <input type="file" id="files" name="files[]" multiple />
+         <output id="list"></output>
+        <br>
     <br>
+
         <div id="submit">
            <label> <input type="submit" onclick="reg()"></label>
            <label> <input type="reset"></label>
                    </div>
     </form>
+
 </div>
 </body>
 </html>
