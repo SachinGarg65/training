@@ -2,12 +2,12 @@ a{
     text-decoration: none;
 }
 body {
-    background-image: url("soft-yellow-wave-background.jpg");
+    background-image: url("BG1.jpg");
     background-size: 1280px 1067px;
     background-repeat: no-repeat;
     background-color: white;
 }
-#header h1{
+#headers h1{
 
     background-color: white;
     color: black;
@@ -24,10 +24,17 @@ body {
     border: 1px solid #000;
     margin: 10px 5px 0 0;
 }
-#logo {
-    margin-left: 120px;
-    margin-bottom: -40px;
+.navbar-inverse
+{
+  background-color: #2A6920;
+    border-color: #2A6920;
 }
+.navbar-inverse
+{
+    background-color:#2A6920 ;
+    border-color: #2A6920;
+}
+
 h2 {
     color: red;
     font-family: cursive;
@@ -51,16 +58,16 @@ h2 {
     bottom: 20px;
     right: 15px;
 }
+
 #sell{
-    margin-left: 380px;
-    margin-right: 70px;
+
     float: left;
-    margin-top: -45px;
     color: white;
     font-weight: bold;
     font-family: 'playball' , cursive;
     letter-spacing: 2px;
     position: relative;
+
     right: 500px;
 }
 #menu
@@ -194,11 +201,12 @@ h4{
 }
 
 #Gallery
-{text-align: center;
+{
+    margin-right: 320px;
     font-size: 30px;
     font-family: 'Playball', cursive }
 
-#p{text-align: center;
+#p{
     margin-top: -10px;
     margin-bottom: 25px;
     color: black;
@@ -329,6 +337,7 @@ h4{
 {
     background-color: rgba(1, 158, 205, 0.48);
 }
+
 
 
 

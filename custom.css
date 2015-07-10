@@ -1,0 +1,29 @@
+.left.carousel-control
+{width: 10px;
+top: 135px;
+height: 20px;
+background: transparent;}
+
+.right.carousel-control
+{
+    top: 44%;
+    height: 20px;
+    width: 20px;
+    background: transparent;
+}
+.navbar-brand
+{
+    font-family: 'playball' , cursive;
+    font-size: 26px;
+    letter-spacing: 4px;
+    padding-left: 10px;
+}
+#logos
+{
+    margin-left: 30px;
+    width: 200px;
+    height: 150px;
+}
+.nav.nav-tabs
+{
+}

@@ -5,62 +5,9 @@
     <link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="abc.css">
     <script src="a.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <meta charset="UTF-8">
-    <script>
-        var reg=function()
-        {
-            var creative = {
-                'fname':document.getElementById('fname').value,
-                'lname':document.getElementById('lname').value,
-                'pass':document.getElementById('pass').value,
-                'show':document.getElementById('show').value,
-                'date':document.getElementById('bday').value,
-                'address':document.getElementById('Address').value,
-                'zip':document.getElementById('Zip').value,
-                'mobile':document.getElementById('Mobile').value,
-                'email':document.getElementById('Email').value,
-                'Qualification':document.getElementById('Qualification').value,
-                'file':document.getElementById('file').value,
-                'files':document.getElementById('files').value
-            };
-            var creative1=JSON.stringify(creative);
-            localStorage.setItem('creative',creative1);function handleFileSelect(reg) {
-                var files = reg.target.files; // FileList object
 
-                         for (var i = 0, f; f = files[i]; i++) {
-
-                    if (!f.type.match('image.*')) {
-                        continue;
-                    }
-
-                    var reader = new FileReader();
-
-                    reader.onload = (function(theFile) {
-                        return function(e) {
-                           // Render thumbnail.
-                            var span = document.createElement('span');
-                            span.innerHTML = ['<img class="thumb" src="', e.target.result,
-                                '" title="', escape(theFile.name), '"/>'].join('');
-
-                            document.getElementById('list').insertBefore(span, null);
-                            localStorage.setItem('img', e.target.result);
-                        };
-                    })(f);
-                }
-            }
-
-            document.getElementById('files').addEventListener('change', handleFileSelect, false);
-
-
-            if(localStorage.img) {
-
-                var span = document.createElement('span');
-                span.innerHTML += ['<img class="thumb" src="', localStorage.img,
-                    '" title="test"/>'].join('');
-
-                document.getElementById('list').insertBefore(span, null)}
-        }
-    </script>
 </head>
 <body>
 <div id="header">
@@ -94,17 +41,16 @@
        <label> First Name*                                                                                                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
        <input type="text" name="FName" id="fname"> <br>
         <br></label>
-     <label>   Last Name*                                                                                                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <label>   Last Name*                                                                                                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="text" name="LName" id="lname"><br>
         <br></label>
-        <label>   Password*                                                                                                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="password" name="pass" id="pass"><br>
-            <br></label>
+
     </div>
         <label>Select Gender*                                                                                                                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="radio" name="seconds" id="show" value="show">Show&nbsp&nbsp
-            <input type="radio" name="seconds" id="hide" value="hide">Hide
+            <input type="radio" name="seconds" id="show" value="show">Male&nbsp&nbsp
+            <input type="radio" name="seconds" id="hide" value="hide">Female
         <br>
+            <br>
      <label>   Date of Birth                                                                                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="date" name="bday" id="bday"></label><br>
         <br>
@@ -114,13 +60,16 @@
       <label><input type="text"><br></label>
                                                                                                                                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label> <input type="text"><br></label>
         <br></label>
-    <label>   Zip Code*                                                                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="Zip" id="Zip"><br>
+    <label>   Zip Code*                                                                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="Zip" id="Zip"><br>
         <br></label>
-    <label>   Mobile No.*                                                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="Mobile" id="Mobile"><br>
+    <label>   Mobile No.*                                                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="Mobile" id="Mobile"><br>
         <br></label>
-    <label>   Email ID*                                                                                                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="Email" id="Email"><br>
+    <label>   Email ID*                                                                                                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="Email" id="Email"><br>
         <br></label>
-        <label>Edu. Qualification                                                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <label>   Password*                                                                                                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="password" name="pass" id="pass"><br>
+        <br></label>
+        <label>Edu. Qualification                                                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <select name="Qualification" id="Qualification" >
             <option value="Select">Select Qualification</option>
             <option value="Below 10th">Below 10th </option>
@@ -143,11 +92,12 @@
         <b>Upload Passport Size Photograph</b><br>
     <br>
          <input type="file" id="files" name="files[]" multiple />
-         <output id="list"></output>
-        <br>
-    <br>
 
-        <div id="submit">
+
+    <img id="img" src="" width="200" />
+    <input type="submit" name="feedback" value="Upload Image" onclick="upload()"/>
+
+    <div id="submit">
            <label> <input type="submit" onclick="reg()"></label>
            <label> <input type="reset"></label>
                    </div>
@@ -156,3 +106,77 @@
 </div>
 </body>
 </html>
+<script>
+    var reg=function()
+    {
+        var creative = {
+            'fname':document.getElementById('fname').value,
+            'lname':document.getElementById('lname').value,
+            'pass':document.getElementById('pass').value,
+            'show':document.getElementById('show').value,
+            'date':document.getElementById('bday').value,
+            'address':document.getElementById('Address').value,
+            'zip':document.getElementById('Zip').value,
+            'mobile':document.getElementById('Mobile').value,
+            'email':document.getElementById('Email').value,
+            'Qualification':document.getElementById('Qualification').value,
+            'file':document.getElementById('file').value,
+            'files':document.getElementById('files').value
+        };
+        var creative1=JSON.stringify(creative);
+        localStorage.setItem('creative',creative1);function handleFileSelect(reg) {
+        var files = reg.target.files; // FileList object
+
+        for (var i = 0, f; f = files[i]; i++) {
+
+            if (!f.type.match('image.*')) {
+                continue;
+            }
+
+            var reader = new FileReader();
+
+            reader.onload = (function(theFile) {
+                return function(e) {
+                    // Render thumbnail.
+                    var span = document.createElement('span');
+                    span.innerHTML = ['<img class="thumb" src="', e.target.result,
+                        '" title="', escape(theFile.name), '"/>'].join('');
+
+                    document.getElementById('list').insertBefore(span, null);
+                    localStorage.setItem('img', e.target.result);
+                };
+            })(f);
+        }
+    }
+
+        document.getElementById('files').addEventListener('change', handleFileSelect, false);
+
+
+        if(localStorage.img) {
+
+            var span = document.createElement('span');
+            span.innerHTML += ['<img class="thumb" src="', localStorage.img,
+                '" title="test"/>'].join('');
+
+            document.getElementById('list').insertBefore(span, null)}
+    }
+    var tmppath;
+
+    $('#files').change( function(event) {
+        tmppath = URL.createObjectURL(event.target.files[0]);
+
+        $("#img").fadeIn("fast").attr('src',URL.createObjectURL(event.target.files[0]));
+    });
+    var upload = function () {
+        var customer = {
+            'userimage': tmppath,
+
+
+        };
+
+
+        localStorage.setItem('customer', JSON.stringify(customer));
+
+    }
+
+</script>
